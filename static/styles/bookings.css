@@ -1,0 +1,34 @@
+body {
+  background: linear-gradient(250deg, #e62e4085, hsla(233, 100%, 51%, 0.38)), url(../images/bookings.jpg);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.submit {
+  background-image: linear-gradient(25deg, #fa8a09, #df3e3f);
+  color: white;
+  border: none;
+}
+
+.submit:hover {
+  background-image: none;
+  border: 1px solid #df3e3f;
+  font-weight: 600;
+}
+
+.alert {
+  bottom: 5px;
+  right: 25px;
+  position: absolute;
+  z-index: 15;
+  width: 500px;
+}
+/* body{
+  min-height: 80vh;
+} */
+.card{
+  min-height: 60vh;
+  margin-bottom: 20px;
+}

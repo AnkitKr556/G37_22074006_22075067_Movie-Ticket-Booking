@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>BoxOffice</title>
+{% endblock %}
+
+{% block JQuery %}
+<script>
+    window.onload = function() {
+      window.location.href = './ticket/{{book.pk}}';
+
+      if (typeof book !== 'undefined') {
+            // Use 'book' safely here
+            var newPrice = {{book.shows.price}} * {{len}};
+            book.shows.price = newPrice;
+        } 
+      else {
+            console.error('The "book" variable is not defined.');
+        }
+  }
+</script>
+{{book.shows.price}}
+{% endblock %}

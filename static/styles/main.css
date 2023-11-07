@@ -1,0 +1,64 @@
+.slide {
+    margin-top: -65px;
+}
+.carousel-inner {
+    background: radial-gradient(#3a3a3a, black);
+}
+.carousel-inner img {
+    height: 700px;
+    margin: 10px auto;
+}
+
+.s1 {
+    background-image: url(../images/Pasted\ image.png);
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+}
+.s2 {
+    background-image: url(../images/image1.png);
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.s3 {
+    background-image: url(../images/Pasted1.png);
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.s4 {
+    background-image: url(../images/Pasted\ image\ 3.png);
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.s5 {
+    background-image: url(../images/Pasted\ image\ 4.png);
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.s6 {
+    background-image: url(../images/Pasted\ image\ 5.png);
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.s7 {
+    background-image: url(../images/Pasted\ image\ 6.png);
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#logo {
+    text-decoration: none;
+    color: white;
+}

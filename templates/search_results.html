@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% block style %}
+<style>
+    body{
+    background-image: linear-gradient(250deg, #dd253785, #273ff361);
+    }
+</style>
+{% endblock %}
+<style>
+        .big{
+        display: flex;
+        height: 60%;
+        flex-wrap: wrap;
+        min-height: 60vh;
+        /* width: 100%; */
+        justify-content:space-around;
+        /* align-items: center; */
+
+
+    }
+    .content{
+            height: 173px;
+    }
+    .small{
+        
+        margin: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust the shadow effect */
+        border-radius: 10px;
+        border: 1px solid black;
+        background-color: white;
+        transition: transform 0.3s;
+    }
+    .small:hover {
+        transform: scale(1.1); /* Increase the scale to create a zoom effect */
+        box-shadow: 5px 5px 10px wheat;
+    }
+    .img{
+        display: block;
+        border-radius: 10px;
+    }
+    .name1{
+        color: black;
+        font-size: 20px;
+         text-align: center;
+        padding-top: 10px;
+         padding-bottom: 10px;
+    }
+    .hh{
+        color: white;
+    }
+</style>
+<h2 class="hh">Search Results for "{{ query }}"</h2>
+<div class="big">
+    
+    {% for movie in results %}
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <a href="/movies/{{movie.pk}}">
+                <div class="card shadow" style="width: 18rem; margin:0px auto;">
+                    <img src="{{ movie.movie_poster.url }}" class="card-img-top" height="380px">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">{{ movie.movie_name }}</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+       
+        {% empty %}
+        <a href="{% url 'index' %}"><h1>No Results Found!!</h1></a>
+        
+    {% endfor %}
+</div>
+<div class="content"></div>
+{% endblock %}

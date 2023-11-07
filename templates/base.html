@@ -1,0 +1,278 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block title%}{% endblock %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <script src="https://kit.fontawesome.com/7dd9aac670.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href={% static "styles/main.css" %}>
+    {% block style %}{% endblock %}
+
+    <style>
+            .search-text {
+                border-radius: 30px 0px 0px 30px;
+            }
+    
+            .search {
+                border-radius: 0px 30px 30px 0px;
+                width: 45px;
+                color: white;
+                background: linear-gradient(45deg, #ef2c3f, #dc3545);
+            }
+            body{
+                /* background: linear-gradient(250deg, #e62e4085, hsla(233, 100%, 51%, 0.38)), url(static/images/bookings.jpg); */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .d-flex{
+                background-color: rgba(244, 244, 228, 0.857);
+                
+            }
+
+            .custom-search {
+                width: 500px; /* Adjust the width to your desired size */
+                height: 40px; /* Adjust the height to your desired size */
+                border-radius: 0.6rem;
+                color: yellow ;
+                background-color: #faf5f5 ;
+            }
+            .content{
+                height: 1000px;
+                
+            }
+            .footer{
+                background-color: #102242;
+                height: 220px;
+                width: 100%;
+                font-family: var(--bs-body-font-family);
+                position: relative;
+                /* margin-left: -20px; */
+                margin-right: -40px;
+            }
+            .contributor{
+                /* background-color: #a91e1e; */
+                color: white;
+                text-align: center;
+                font-size: 30px;
+                /* padding-bottom: 1px; */
+            }
+            .left-footer{
+                display: inline-block;
+                /* float: left; */
+                color: white;
+                /* background-color:white; */
+                width: 50%;
+                /* height: 250px; */
+                margin-bottom: -100px;
+                /* padding: 30px; */
+                /* margin-right: 10px; */
+                left:0;
+                position: absolute; 
+            }
+            .line {
+                border-left: 1px solid #f7eeee; /* Adjust the color and thickness of the line */
+                background-color: #a91e1e;
+                height: 150px; /* Adjust the height as needed to match the elements */
+                display: inline-block;
+                /* margin: 0 10px;  */
+                /* Adjust the margin to control spacing */
+                left: 50%;
+                position: absolute;
+            }
+            .right-footer{
+                /* float: left; */
+                display: inline-block;
+                color: white;
+                /* background-color: #a91e1e; */
+                width: 50%;
+                /* height: 250px; */
+                margin-bottom: -100px;
+                /* padding: 30px; */
+                left:50%;
+                position: absolute;
+            }
+            .name{
+                /* background-color: white; */
+                color: white;
+                font-size: 20px;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .linkedin{
+                /* background-color: #c0ccb0; */
+                font-size: 20px;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .instagram{
+                /* background-color: #a8a53f; */
+                font-size: 20px;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .portfolio{
+                /* background-color: #9414a0; */
+                font-size: 20px;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .top-footer{
+                display: inline;
+                /* display: inline block; */
+            }
+            .bottom-footer {
+                    position: absolute;
+                    width: 100%;
+                    background-color:#102242;
+                    color: #fff;
+                    text-align: center;
+                    bottom: 0%;
+                    padding: 10px;
+            }
+            #iitbhu{
+                display: inline-block;
+                background-color: white;
+                /* height: 20px; */
+            }
+            a{
+                padding: 2px;
+                padding-top: 0px;
+            }
+            
+    </style>    
+</head>
+  <body>
+      
+    <nav class="navbar sticky-top" style="background-color: #0000006b">
+        <div class="col-lg-3 col-md-4 col-8">
+            <h2 class="text-white"> <a role="button" href={% url 'index' %} style="text-decoration: none; color: white;" ><i class="fa fa-video-camera"></i> BoxOffice</a></h2>
+        </div>
+        <div class="col-lg-5 col-4 d-none d-md-inline">
+                <!-- <form class="row" action="#" method="GET">
+                    <div class="input-group col-12">
+                        <input type="search" class="form-control search-text" placeholder="Search Movies">
+                        <button type="submit" class="btn search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </form> -->
+                <form class="row" action="{% url 'search' %}" method="GET">
+                    <div class="input-group col-12">
+                        <input type="search" class="form-control search-text" name = "q" placeholder="Search Movies">
+                        <button type="submit" class="btn search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                    <!-- <input class="input-group col-12 form-control me-2 custom-search" type="search" name="q" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success srchbtn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button> -->
+                </form>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="col-lg-3 col-4">
+                <div class="dropdown">
+                        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-user" aria-hidden="true"></i> {{user.first_name }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            
+                            <a class="dropdown-item" href="{% url 'profile' %}"> <i class="fa fa-edit"></i> Profile</a>
+                            <a class="dropdown-item" href="{% url 'bookings' %}"> <i class="fa fa-ticket"></i> Bookings</a>
+                            <a class="dropdown-item" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a>
+                        </div>
+                </div>
+        </div>
+        {%  else  %}
+        <div class="col-lg-3 col-12 mt-2">
+            <div class="row no-gutters">
+                <div class="col mr-1">
+                    <a class="btn btn-danger d-block" href="{% url 'register' %}" role="button"> Sign Up </a>
+                </div>
+                <div class="col">
+                    <a class="btn btn-danger d-block" href="{% url 'login' %}" role="button"> Sign In </a> 
+                </div>
+            </div>    
+        </div>
+        {% endif %}
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+    
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+
+    {% block JQuery %}
+    {% endblock %}
+
+    <footer class="footer" id="contact">
+        <div class="contributor">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="top-footer">    
+        <div class="left-footer">
+            <div class="name">
+                <h3>Ankit Kumar</h3>
+            </div>
+            <div class="icon" style="text-align: center;">
+                <a href="https://www.instagram.com/_ankitkumar_556/?hl=en/" target="_blank">
+                    <img src="{% static 'images/instagram.png' %}" height="40px" width="40px" >
+                </a>
+    
+                <a href="https://www.linkedin.com/in/ankit-kumar-50342a25b?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAD_1CFMB-EsrF0XVlQj3WHcZHYCUIYgrK-E&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BMbW8QRoDTY6t1Pus%2FylBKg%3D%3D" target="_blank">
+                    <img src="{% static 'images/linkedin.png' %} " height="40px" alt="">
+    
+                </a>
+    
+                <a href="mailto:akvns777999@gmail.com" target="_blank">
+                    <img src="{% static 'images/gmail.png' %} " height="40px" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="right-footer">
+            <div class="name">
+                <h3>Rahul Jambulkar</h3>
+            </div>
+
+            <div class="icon" style="text-align: center;">
+                <a href="https://www.instagram.com/rahul_jambulkar/?hl=en" target="_blank">
+                    <img src="{% static 'images/instagram.png' %}" height="40px" width="40px" >
+                </a>
+                <a href="https://www.linkedin.com/in/rahul-jambulkar-949919257/">
+                    <img src="{% static 'images/linkedin.png' %} " height="40px" alt="">
+    
+                </a>
+    
+                <a href="mailto:rahuljambulkar@gmail.com" target="_blank">
+                    <img src="{% static 'images/gmail.png' %} " height="40px" alt="">
+                </a>
+            </div>
+
+    
+        </div>
+        </div>
+        <div class="bottom-footer">
+        <div id="iitbhu">
+        
+            <img src="{% static 'images/iitbhu.png' %} " height="100%" width="100px" alt="">
+        </div>
+            IIT BHU(Varanasi)
+        </div>
+        
+        </footer>
+
+</body>
+
+</html>
